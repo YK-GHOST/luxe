@@ -1,0 +1,16 @@
+extends ../base.pug
+
+block variables
+  -var template = 'home'
+
+block content
+
+
+  .home
+    .home__wrapper
+      .home__wrapper__title!=home.data.heading.replace(/\n/g,'<br>').replace('Luxury', '<span>Luxury</span>')
+      figure.home__image
+        img.home__image.media(src=home.data.image.url alt=home.data.image.alt)
+      a.home__link(href=Link(home.data))=home.data.button
+
+

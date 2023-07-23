@@ -1,0 +1,58 @@
+.home {
+  position: relative;
+  padding: 11.3rem 3rem;
+}
+
+.home__wrapper {
+}
+
+.home__wrapper__title {
+  @extend %title_96;
+
+  color: $color-snowy-mount;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+
+  text-align: center;
+
+  & span {
+    font-family: $font-italiana;
+    font-size: 12.8rem;
+    font-weight: 300;
+  }
+}
+
+.home__image {
+  @extend %center;
+}
+
+.home__image.media {
+  width: 100%;
+  height: 100%;
+}
+
+.home__link {
+  align-items: center;
+  justify-content: center;
+  border-radius: 5rem;
+
+  display: flex;
+
+  font-family: $font-montserrat;
+  font-size: 3.2rem;
+
+  height: 7rem;
+  width: 23rem;
+
+  background-color: $color-snowy-mount;
+  color: $color-lotus;
+
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  text-align: center;
+}

@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  @extend %cover;
+
+  background-color: $color-snowy-mount;
+  font-size: calc(100vw / 1920px * 10px);
+}
+
+body {
+  @extend %cover;
+
+  font-family: $font-montserrat;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
