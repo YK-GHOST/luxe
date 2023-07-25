@@ -1,0 +1,129 @@
+.collection {
+  position: relative;
+  opacity: 0;
+
+  @include media('<=phone') {
+    height: 100vh;
+  }
+  user-select: none;
+}
+
+.collection__wrapper {
+  overflow: hidden;
+}
+
+.collection__wrapper__heading {
+  @extend %title_96;
+
+  background: $color-black;
+  color: $color-snowy-mount;
+  display: flex;
+  width: 200vw;
+  padding: 8rem;
+
+  & p {
+    font-family: $font-italiana;
+    font-weight: 300;
+    // transform: translateX(100%);
+  }
+}
+
+.collection__content {
+  display: flex;
+  flex-direction: row;
+  height: 80.4rem;
+  width: 100%;
+  position: relative;
+
+  @include media('<=tablet') {
+    display: grid;
+    grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(2, [row-start] 1fr [row-end]);
+
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.collection__content__media {
+  & img {
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    @include media('<=tablet') {
+      &:nth-child(1) {
+        width: 100%;
+        height: 100%;
+      }
+
+      &:nth-child(2) {
+        width: 23rem;
+        height: 23rem;
+      }
+
+      &:nth-child(3) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  &:nth-child(1) {
+    grid-row: row-start 1 / row-end 1;
+    grid-column: col-start 1 / -1;
+  }
+
+  &:nth-child(3) {
+    grid-row: row-start 2 / row-end 2;
+    grid-column: col-start 1 / col-end 2;
+  }
+
+  &:nth-child(5) {
+    grid-row: row-start 2 / row-end 2;
+    grid-column: col-start 3 / -1;
+  }
+
+  &:nth-child(5) img {
+    width: 52rem;
+
+    @include media('<=tablet') {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.collection__content__title {
+  @extend %title_96;
+
+  color: $color-lotus;
+  font-family: $font-italiana;
+  font-weight: 300;
+  visibility: hidden;
+
+  position: absolute;
+  transform: rotate(-90deg);
+  transition: visibility 0.1s ease;
+
+  &:nth-child(2) {
+    left: -10rem;
+    bottom: 35rem;
+  }
+
+  &:nth-child(4) {
+    left: 70rem;
+    bottom: 40rem;
+  }
+
+  &:nth-child(6) {
+    right: 20rem;
+    bottom: 40rem;
+  }
+}
+
+.animateIn {
+  filter: grayscale(0);
+}
+
+.animateOut {
+  filter: grayscale(1);
+}

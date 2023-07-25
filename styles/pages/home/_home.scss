@@ -1,37 +1,58 @@
 .home {
   position: relative;
-  padding: 11.3rem 3rem;
+  padding: 12rem 3rem;
+  opacity: 0;
+  @include media('<phone') {
+    height: 100vh;
+    padding: 0;
+  }
 }
 
 .home__wrapper {
+  overflow: hidden;
+  @include media('<phone') {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .home__wrapper__title {
   @extend %title_96;
 
+  overflow: hidden;
   color: $color-snowy-mount;
 
   position: absolute;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
+  width: 100%;
 
   text-align: center;
+
+  & {
+    padding: 1rem;
+  }
 
   & span {
     font-family: $font-italiana;
     font-size: 12.8rem;
+    font-weight: 300;
+
+    @include media('<=phone') {
+      font-size: 50rem;
+    }
+  }
+
+  @include media('<phone') {
+    z-index: 1;
+    font-size: 25rem;
     font-weight: 300;
   }
 }
 
 .home__image {
   @extend %center;
-}
-
-.home__image.media {
-  width: 100%;
-  height: 100%;
 }
 
 .home__link {
@@ -55,4 +76,13 @@
   left: 50%;
   transform: translate(-50%, -60%);
   text-align: center;
+
+  @include media('<=phone') {
+    border-radius: 15rem;
+    height: 25rem;
+    width: 55rem;
+    font-size: 8rem;
+
+    top: 70%;
+  }
 }

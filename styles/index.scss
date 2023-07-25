@@ -7,7 +7,11 @@
 @import './base/base';
 
 @import './shared/titles';
+@import './shared/description';
 
 @import './components/preloader';
+@import './layout/navigation';
 
 @import './pages/home/home';
+
+@import './sections/collections';

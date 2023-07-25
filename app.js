@@ -5,13 +5,22 @@ const app = express();
 const path = require('path');
 const port = 3000;
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 const Prismic = require('@prismicio/client');
 
+// if (module.hot) {
+//   module.hot.accept();
+// }
+
 const handleLinkResolver = (doc) => {
+  if (doc === 'Valentina') {
+    return '/valentina';
+  }
+  if (doc === 'Aura Beige') {
+    return '/aura';
+  }
+  if (doc === 'Nectar Blue') {
+    return '/nectar';
+  }
   return '/';
 };
 
@@ -24,12 +33,13 @@ const initApi = (req) => {
 };
 
 const handleRequest = async (api) => {
-  const [home, preloader] = await Promise.all([
+  const [home, preloader, navigation] = await Promise.all([
     api.getSingle('home'),
     api.getSingle('preloader'),
+    api.getSingle('navigation'),
   ]);
 
-  return { home, preloader };
+  return { home, preloader, navigation };
 };
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -8,9 +8,26 @@ block content
 
   .home
     .home__wrapper
-      .home__wrapper__title!=home.data.heading.replace(/\n/g,'<br>').replace('Luxury', '<span>Luxury</span>')
-      figure.home__image
-        img.home__image.media(src=home.data.image.url alt=home.data.image.alt)
-      a.home__link(href=Link(home.data))=home.data.button
 
+      .home__wrapper__title(data-animation='reveal')
+        h1!=home.data.heading.replace(/\n/g,'<br>').replace('Luxury', '<span>Luxury</span>')
+      figure.home__image
+        img.home__image_media(data-src=home.data.image.url alt=home.data.image.alt )
+      a.home__link(href=Link(home.data) data-animation='reveal')=home.data.button
+
+  .collection
+    .collection__wrapper
+      each section in home.data.body
+        if section.slice_type === 'collections'
+          .collection__wrapper__heading
+            p=section.primary.collection_heading
+
+          .collection__content
+            each media in section.items
+
+              figure.collection__content__media
+                a(href=Link(media.title))
+                  img(data-src=media.image1.url alt=media.title class='collection__media__image' data-animation='hover')
+
+              .collection__content__title(data-title=media.title)=media.title
 
