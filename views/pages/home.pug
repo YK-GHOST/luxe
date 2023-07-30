@@ -8,11 +8,10 @@ block content
 
   .home
     .home__wrapper
-
       .home__wrapper__title(data-animation='reveal')
         h1!=home.data.heading.replace(/\n/g,'<br>').replace('Luxury', '<span>Luxury</span>')
       figure.home__image
-        img.home__image_media(data-src=home.data.image.url alt=home.data.image.alt )
+        img.home__image__media(data-src=home.data.image.url alt=home.data.image.alt )
       a.home__link(href=Link(home.data) data-animation='reveal')=home.data.button
 
   .collection
@@ -30,4 +29,7 @@ block content
                   img(data-src=media.image1.url alt=media.title class='collection__media__image' data-animation='hover')
 
               .collection__content__title(data-title=media.title)=media.title
+
+      .box(data-animation='parallax')
+
 

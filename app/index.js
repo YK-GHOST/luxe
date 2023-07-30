@@ -1,3 +1,4 @@
+import Relative from './animations/Relative';
 import Preloader from './components/Preloader';
 import Home from './pages/home/Home';
 
@@ -6,8 +7,8 @@ class App {
     this.createPreloader();
     this.createContent();
     this.createPage();
-
-    // this.update();
+    this.createCanvas();
+    this.update();
   }
 
   createPreloader() {
@@ -28,6 +29,10 @@ class App {
     this.page = this.pages[this.template];
   }
 
+  createCanvas() {
+    this.canvas = new Relative();
+  }
+
   onPreloaded() {
     this.preloader.destroy();
     this.page.show();
@@ -37,6 +42,11 @@ class App {
     if (this.page && this.page.update) {
       this.page.update();
     }
+
+    if (this.canvas && this.canvas.update) {
+      this.canvas.update();
+    }
+
     this.frame = window.requestAnimationFrame(this.update.bind(this));
   }
 }

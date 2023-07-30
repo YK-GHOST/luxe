@@ -22,6 +22,8 @@
 
 /*! ../animations/Heading */
 
+/*! ../animations/Relative */
+
 /*! ../animations/hover */
 
 /*! ../classes/Animation */
@@ -240,6 +242,8 @@
 
 /*! ./_toSource */
 
+/*! ./animations/Relative */
+
 /*! ./clients/WebSocketClient.js */
 
 /*! ./components/Preloader */
@@ -389,6 +393,10 @@
 /*!***********************************!*\
   !*** ./node_modules/lodash/eq.js ***!
   \***********************************/
+
+/*!************************************!*\
+  !*** ./app/animations/Relative.js ***!
+  \************************************/
 
 /*!************************************!*\
   !*** ./node_modules/gsap/index.js ***!

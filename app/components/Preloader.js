@@ -63,12 +63,10 @@ export default class Preloader extends Component {
 
       this.timeline.to(this.element, {
         height: '0%',
-        duration: 1,
       });
 
       this.timeline.to(this.elements.background, {
         y: '-100%',
-        duration: 1,
       });
 
       this.timeline.call(() => {

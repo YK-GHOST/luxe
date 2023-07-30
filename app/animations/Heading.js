@@ -7,7 +7,6 @@ export default class Heading extends Animation {
   }
 
   animateIn() {
-    console.log('animateIn');
     this.timeline = GSAP.timeline({
       delay: 0.5,
     });

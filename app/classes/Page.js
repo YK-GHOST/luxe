@@ -4,6 +4,7 @@ import map from 'lodash/map';
 import GSAP from 'gsap';
 import Hover from '../animations/hover';
 import Heading from '../animations/Heading';
+import Relative from '../animations/Relative';
 
 export default class Page {
   constructor({ element, elements, id }) {
@@ -54,14 +55,15 @@ export default class Page {
         return new Hover({ element, elements });
       }
     );
-
     this.animations.push(...this.animationHover);
 
     this.animationHeading = map(this.elements.animationReveal, (element) => {
       return new Heading({ element });
     });
-
     this.animations.push(...this.animationHeading);
+
+    // this.animationParallax = new Relative(this.element)
+    // this.animations.push(...this.animationParallax);
   }
 
   show() {
@@ -87,7 +89,5 @@ export default class Page {
     );
   }
 
-  update() {
-    console.log('updating page');
-  }
+  update() {}
 }
